@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>En Confidence - Maison de Beauté | Salon de coiffure & institut de beauté à Toulouse</title>
+<meta name="description" content="En Confidence, Maison de Beauté à Toulouse : salon de coiffure et institut de beauté. Note 4,9/5 sur 65 avis. 2 Rue Ninau, 31000 Toulouse. Prenez rendez-vous.">
+<meta name="keywords" content="salon de coiffure Toulouse, institut de beauté Toulouse, coiffeur centre-ville Toulouse, soins visage Toulouse, épilation Toulouse, manucure Toulouse">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #2F6F6B;
+    --secondary: #D9A38A;
+    --background: #F7F1E8;
+    --text: #2B2A26;
+    --cta: #C97B5A;
+    --font-heading: 'Fraunces', serif;
+    --font-body: 'Karla', sans-serif;
+    --radius: 4px;
+    --shadow-soft: 0 8px 40px rgba(43,42,38,0.10);
+    --transition: 0.4s ease;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--background);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .cta {
+    display: inline-block;
+    background: var(--cta);
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    box-shadow: 0 4px 18px rgba(201,123,90,0.18);
+  }
+  .cta:hover {
+    background: #b36a4a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(201,123,90,0.28);
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-heading {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--primary);
+    margin-bottom: 1.2rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ── FADE-IN ANIMATION ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── CORNER FRAME ── */
+  .corner-frame {
+    position: relative;
+  }
+  .corner-frame::before,
+  .corner-frame::after {
+    content: '';
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-color: var(--secondary);
+    border-style: solid;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .corner-frame::before {
+    top: -10px;
+    left: -10px;
+    border-width: 2px 0 0 2px;
+  }
+  .corner-frame::after {
+    bottom: -10px;
+    right: -10px;
+    border-width: 0 2px 2px 0;
+  }
+
+  /* ══════════════════════════════════════
+     NAV
+  ══════════════════════════════════════ */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(247,241,232,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(217,163,138,0.18);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled {
+    box-shadow: 0 2px 20px rgba(43,42,38,0.08);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    padding: 0 1.5rem;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--primary);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+  .nav-logo span {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    font-weight: 500;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  nav ul li a {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav ul li a:hover { color: var(--primary); }
+  nav ul li.nav-cta a {
+    background: var(--cta);
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--radius);
+    transition: background 0.2s;
+  }
+  nav ul li.nav-cta a:hover { background: #b36a4a; }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    z-index: 110;
+  }
+  .burger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger.active span:nth-child(2) { opacity: 0; }
+  .burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 767px) {
+    .burger { display: flex; }
+    nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: rgba(247,241,232,0.98);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem 1.5rem 2rem;
+      gap: 1.2rem;
+      border-bottom: 1px solid rgba(217,163,138,0.2);
+      box-shadow: 0 8px 30px rgba(43,42,38,0.10);
+    }
+    nav ul.open { display: flex; }
+    nav ul li { width: 100%; text-align: center; }
+    nav ul li.nav-cta a { display: block; }
+  }
+
+  @media (min-width: 768px) {
+    nav ul { display: flex !important; }
+  }
+
+  /* ══════════════════════════════════════
+     HERO
+  ══════════════════════════════════════ */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 68px;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(43,42,38,0.62) 0%, rgba(43,42,38,0.28) 60%, rgba(43,42,38,0.08) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    padding: 4rem 1.5rem;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(247,241,232,0.15);
+    border: 1px solid rgba(217,163,138,0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 50px;
+    padding: 0.35rem 1rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: #f7f1e8;
+    letter-spacing: 0.06em;
+  }
+  .hero-badge .stars { color: var(--secondary); }
+  .hero-content h1 {
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    color: #f7f1e8;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    font-style: italic;
+  }
+  .hero-content .hero-sub {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+  }
+  .hero-content p {
+    font-size: 1.05rem;
+    color: rgba(247,241,232,0.88);
+    margin-bottom: 2rem;
+    max-width: 480px;
+    line-height: 1.75;
+  }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .cta-outline {
+    display: inline-block;
+    border: 1.5px solid rgba(247,241,232,0.6);
+    color: #f7f1e8;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    padding: 0.82rem 1.8rem;
+    border-radius: var(--radius);
+    transition: background 0.3s, border-color 0.3s;
+    text-transform: uppercase;
+  }
+  .cta-outline:hover {
+    background: rgba(247,241,232,0.12);
+    border-color: rgba(247,241,232,0.9);
+  }
+
+  @media (min-width: 768px) {
+    .hero-content {
+      padding: 5rem 3rem 5rem 5rem;
+    }
+  }
+
+  /* ══════════════════════════════════════
+     ABOUT
+  ══════════════════════════════════════ */
+  #apropos {
+    padding: 6rem 0;
+    background: var(--background);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .about-text .section-heading { margin-bottom: 1.4rem; }
+  .about-text p {
+    font-size: 1.05rem;
+    color: var(--text);
+    opacity: 0.88;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  .about-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .about-highlights li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--primary);
+  }
+  .about-highlights li::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    background: var(--secondary);
+    flex-shrink: 0;
+  }
+  .about-image-wrap {
+    position: relative;
+    height: 420px;
+    border-radius: var(--radius);
+    overflow: visible;
+    box-shadow: var(--shadow-soft);
+  }
+  .about-image-wrap .img-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .about-deco {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 120px;
+    height: 120px;
+    background: var(--secondary);
+    opacity: 0.15;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+    .about-image-wrap { height: 520px; }
+  }
+
+  /* ══════════════════════════════════════
+     FEATURED MENU (PRESTATIONS)
+  ══════════════════════════════════════ */
+  #prestations {
+    padding: 6rem 0;
+    background: #f0e9de;
+  }
+  .prestations-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 3.5rem;
+  }
+  .prestations-header p {
+    font-size: 1rem;
+    opacity: 0.82;
+    line-height: 1.75;
+  }
+  .prestations-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .presta-card {
+    background: var(--background);
+    border-radius: var(--radius);
+    padding: 2rem 1.8rem;
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition), box-shadow var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  .presta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--secondary);
+    border-radius: 2px 0 0 2px;
+  }
+  .presta-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 50px rgba(43,42,38,0.13);
+  }
+  .presta-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .presta-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-bottom: 0.6rem;
+    font-weight: 400;
+  }
+  .presta-card p {
+    font-size: 0.92rem;
+    opacity: 0.78;
+    line-height: 1.65;
+  }
+  .prestations-cta {
+    text-align: center;
+  }
+
+  @media (min-width: 600px) {
+    .prestations-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .prestations-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* ══════════════════════════════════════
+     CUSTOMER REVIEWS
+  ══════════════════════════════════════ */
+  #avis {
+    padding: 6rem 0;
+    background: var(--background);
+  }
+  .reviews-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  .reviews-global {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-top: 0.8rem;
+    letter-spacing: 0.04em;
+  }
+  .reviews-global .stars { color: var(--secondary); }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .review-card {
+    background: #f0e9de;
+    border-radius: var(--radius);
+    padding: 2.2rem 2rem 1.8rem;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+  }
+  .big-quote {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    line-height: 0.6;
+    color: var(--secondary);
+    opacity: 0.55;
+    display: block;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .review-text {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 1.4rem;
+    font-style: italic;
+  }
+  .review-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .review-author {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--primary);
+  }
+  .review-date {
+    font-size: 0.78rem;
+    opacity: 0.55;
+    letter-spacing: 0.04em;
+  }
+  .review-stars {
+    color: var(--secondary);
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+  }
+
+  @media (min-width: 768px) {
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ══════════════════════════════════════
+     GALLERY PREVIEW
+  ══════════════════════════════════════ */
+  #galerie {
+    padding: 6rem 0;
+    background: #f0e9de;
+  }
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .gallery-header p {
+    font-size: 1rem;
+    opacity: 0.78;
+  }
+  .gallery-asymmetric {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+  .gallery-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.04); }
+  .gallery-item-1 { height: 280px; }
+  .gallery-item-2 { height: 220px; }
+
+  @media (min-width: 600px) {
+    .gallery-asymmetric {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 320px 220px;
+    }
+    .gallery-item-1 {
+      grid-column: 1;
+      grid-row: 1 / 3;
+      height: 100%;
+    }
+    .gallery-item-2 {
+      grid-column: 2;
+      grid-row: 1;
+      height: 100%;
+    }
+  }
+
+  /* ══════════════════════════════════════
+     HOURS & LOCATION
+  ══════════════════════════════════════ */
+  #horaires {
+    padding: 6rem 0;
+    background: var(--background);
+  }
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hours-info .section-heading { margin-bottom: 1.5rem; }
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+  .hours-table tr {
+    border-bottom: 1px solid rgba(217,163,138,0.2);
+  }
+  .hours-table tr:last-child { border-bottom: none; }
+  .hours-table td {
+    padding: 0.7rem 0;
+    font-size: 0.95rem;
+  }
+  .hours-table td:first-child {
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: capitalize;
+    width: 48%;
+  }
+  .hours-table td:last-child {
+    color: var(--text);
+    opacity: 0.82;
+  }
+  .hours-table tr.closed td { opacity: 0.45; }
+  .hours-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+  .hours-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 1.05rem;
+    transition: color 0.2s;
+  }
+  .hours-contact a:hover { color: var(--cta); }
+  .hours-address {
+    font-size: 0.92rem;
+    opacity: 0.72;
+    line-height: 1.6;
+  }
+  .map-wrap {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    height: 340px;
+  }
+  .map-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @media (min-width: 768px) {
+    .hours-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .map-wrap { height: 100%; min-height: 380px; }
+  }
+
+  /* ══════════════════════════════════════
+     CONTACT FORM
+  ══════════════════════════════════════ */
+  #contact {
+    padding: 6rem 0;
+    background: var(--primary);
+  }
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .contact-info .section-heading {
+    color: #f7f1e8;
+    margin-bottom: 1rem;
+  }
+  .contact-info .section-label { color: var(--secondary); }
+  .contact-info p {
+    color: rgba(247,241,232,0.82);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.8rem;
+  }
+  .contact-phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--secondary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+  .contact-phone-link:hover { opacity: 0.8; }
+  .contact-form-wrap {
+    background: rgba(247,241,232,0.07);
+    border: 1px solid rgba(247,241,232,0.15);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    backdrop-filter: blur(4px);
+  }
+  .form-group {
+    margin-bottom: 1.4rem;
+  }
+  .form-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(247,241,232,0.7);
+    margin-bottom: 0.5rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(247,241,232,0.1);
+    border: 1px solid rgba(247,241,232,0.2);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #f7f1e8;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(247,241,232,0.35);
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--secondary);
+    background: rgba(247,241,232,0.14);
+  }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .form-submit { margin-top: 0.5rem; }
+  .form-submit .cta { width: 100%; text-align: center; }
+
+  @media (min-width: 768px) {
+    .contact-inner { grid-template-columns: 1fr 1.2fr; gap: 5rem; }
+  }
+
+  /* ══════════════════════════════════════
+     TRUST SIGNALS
+  ══════════════════════════════════════ */
+  #confiance {
+    padding: 5rem 0;
+    background: #f0e9de;
+  }
+  .trust-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .trust-item {
+    background: var(--background);
+    border-radius: var(--radius);
+    padding: 1.6rem 1.4rem;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition);
+  }
+  .trust-item:hover { transform: translateY(-3px); }
+  .trust-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.7rem;
+  }
+  .trust-item p {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.4;
+  }
+
+  @media (min-width: 600px) {
+    .trust-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .trust-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* ══════════════════════════════════════
+     FOOTER
+  ══════════════════════════════════════ */
+  footer {
+    background: var(--text);
+    color: rgba(247,241,232,0.75);
+    padding: 4rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand .footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: #f7f1e8;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 0.4rem;
+  }
+  .footer-brand .footer-tagline {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+  }
+  .footer-brand p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    max-width: 280px;
+  }
+  .footer-col h4 {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li {
+    font-size: 0.88rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+  .footer-col ul li span.day {
+    display: inline-block;
+    min-width: 90px;
+    font-weight: 600;
+    color: rgba(247,241,232,0.6);
+    text-transform: capitalize;
+  }
+  .footer-col address {
+    font-style: normal;
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  .footer-col address a {
+    color: var(--secondary);
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+  .footer-col address a:hover { opacity: 0.75; }
+  .footer-bottom {
+    border-top: 1px solid rgba(247,241,232,0.1);
+    padding-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.78rem;
+    opacity: 0.5;
+  }
+
+  @media (min-width: 768px) {
+    .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+  }
+
+  /* ══════════════════════════════════════
+     UTILITIES
+  ══════════════════════════════════════ */
+  .text-center { text-align: center; }
+  .mt-1 { margin-top: 1rem; }
+  .mt-2 { margin-top: 2rem; }
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="main-nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="En Confidence - Maison de Beauté, retour à l'accueil">
+      En Confidence
+      <span>Maison de Beauté</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-menu" role="list">
+      <li><a href="#apropos">La maison</a></li>
+      <li><a href="#prestations">Prestations</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+      <li class="nav-cta"><a href="#contact" class="cta" aria-label="Prendre rendez-vous">Prendre rendez-vous</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero" aria-label="Accueil En Confidence - Maison de Beauté">
+  <div class="hero-bg">
+    <img src="assets/hero.jpg" alt="En Confidence - Maison de Beauté, salon de coiffure et institut de beauté à Toulouse" loading="eager">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="stars">★★★★★</span>
+        <span>4,9/5 · 65 avis Google</span>
+      </div>
+      <p class="hero-sub">Salon de coiffure & Institut de beauté · Toulouse</p>
+      <h1>En Confidence<br>Maison de Beauté</h1>
+      <p>Une adresse où l'on prend soin de vous, en toute confidence. Coiffure et beauté au cœur de Toulouse, dans une atmosphère intime et chaleureuse.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="cta" aria-label="Prendre rendez-vous">Prendre rendez-vous</a>
+        <a href="#prestations" class="cta-outline" aria-label="Découvrir nos prestations">Découvrir nos prestations</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="apropos" aria-label="À propos d'En Confidence - Maison de Beauté">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <span class="section-label">La maison</span>
+        <h2 class="section-heading">Une adresse intime au cœur de Toulouse</h2>
+        <p>En Confidence - Maison de Beauté réunit un salon de coiffure et un institut de beauté au 2 Rue Ninau, à Toulouse. Ici, chaque visite se déroule dans une atmosphère intime et soignée, où votre confort et votre satisfaction sont au centre de l'attention. Une adresse magique à Toulouse, saluée par ses clients pour la qualité du travail et la bienveillance de l'accueil.</p>
+        <ul class="about-highlights">
+          <li>Salon de coiffure &amp; institut de beauté</li>
+          <li>Une adresse magique à Toulouse</li>
+          <li>Note de 4,9/5 sur 65 avis</li>
+        </ul>
+        <a href="#contact" class="cta" aria-label="Prendre rendez-vous">Prendre rendez-vous</a>
+      </div>
+      <div class="about-image-wrap corner-frame fade-in">
+        <div class="img-inner">
+          <img src="assets/gallery-1.jpg" alt="Intérieur chaleureux d'En Confidence - Maison de Beauté à Toulouse" loading="lazy">
+        </div>
+        <div class="about-deco"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURED MENU (PRESTATIONS) ══ -->
+<section id="prestations" aria-label="Nos prestations de coiffure et beauté">
+  <div class="container">
+    <div class="prestations-header fade-in">
+      <span class="section-label">Ce que nous faisons</span>
+      <h2 class="section-heading">Nos prestations</h2>
+      <p>En Confidence - Maison de Beauté vous accueille pour vos prestations de coiffure et de beauté, au 2 Rue Ninau à Toulouse. Pour connaître les prestations disponibles, contactez-nous directement par téléphone.</p>
+    </div>
+    <div class="prestations-grid">
+      <div class="presta-card fade-in">
+        <div class="presta-icon">✂️</div>
+        <h3>Coiffure femme &amp; homme</h3>
+        <p>Coupe, brushing, shampoing et mise en forme adaptés à votre style et à la nature de vos cheveux.</p>
+      </div>
+      <div class="presta-card fade-in">
+        <div class="presta-icon">🌿</div>
+        <h3>Soins capillaires &amp; coloration végétale</h3>
+        <p>Soins nourrissants, colorations végétales douces et techniques de coloration respectueuses de vos cheveux.</p>
+      </div>
+      <div class="presta-card fade-in">
+        <div class="presta-icon">✨</div>
+        <h3>Soins du visage &amp; épilation</h3>
+        <p>Soins du visage personnalisés et épilation douce pour révéler votre éclat naturel au quotidien.</p>
+      </div>
+      <div class="presta-card fade-in">
+        <div class="presta-icon">💅</div>
+        <h3>Manucure, pédicure &amp; maquillage</h3>
+        <p>Pose de vernis, soin des mains et des pieds, maquillage et instants de bien-être et de relaxation.</p>
+      </div>
+    </div>
+    <div class="prestations-cta fade-in">
+      <a href="#contact" class="cta" aria-label="Prendre rendez-vous pour nos prestations">Prendre rendez-vous</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CUSTOMER REVIEWS ══ -->
+<section id="avis" aria-label="Avis clients d'En Confidence - Maison de Beauté">
+  <div class="container">
+    <div class="reviews-header fade-in">
+      <span class="section-label">Témoignages</span>
+      <h2 class="section-heading">Ils nous font confiance</h2>
+      <div class="reviews-global" aria-label="Note globale 4,9 sur 5 basée sur 65 avis">
+        <span class="stars">★★★★★</span>
+        <span>4,9/5 · 65 avis Google</span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+
+      <article class="review-card fade-in" aria-label="Avis de Catherine Livesey">
+        <span class="big-quote" aria-hidden="true">"</span>
+        <div class="review-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p class="review-text">I went to this salon on holiday for a wash and blow dry service. The stylist was professional and did a fantastic job. They also very kindly spoke to me in English. Very happy with how my hair looks! Merci beaucoup!</p>
+        <div class="review-footer">
+          <span class="review-author">Catherine Livesey</span>
+          <span class="review-date">il y a moins d'une semaine</span>
+        </div>
+      </article>
+
+      <article class="review-card fade-in" aria-label="Avis de Thomas Lauret">
+        <span class="big-quote" aria-hidden="true">"</span>
+        <div class="review-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p class="review-text">J'ai passé un super moment, la coupe de cheveux est parfaite. Victoire est adorable, attentionnée et sait même être drôle aha, je recommande 1000 fois. Merci.</p>
+        <div class="review-footer">
+          <span class="review-author">Thomas Lauret</span>
+          <span class="review-date">il y a 2 mois</span>
+        </div>
+      </article>
+
+      <article class="review-card fade-in" aria-label="Avis de Claude Boineau">
+        <span class="big-quote" aria-hidden="true">"</span>
+        <div class="review-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p class="review-text">Une adresse magique a Toulouse En confidence.</p>
+        <div class="review-footer">
+          <span class="review-author">Claude Boineau</span>
+          <span class="review-date">il y a 3 mois</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALLERY PREVIEW ══ -->
+<section id="galerie" aria-label="Galerie photos d'En Confidence - Maison de Beauté">
+  <div class="container">
+    <div class="gallery-header fade-in">
+      <span class="section-label">En images</span>
+      <h2 class="section-heading">Découvrez notre univers</h2>
+      <p>Découvrez l'univers d'En Confidence - Maison de Beauté à Toulouse.</p>
+    </div>
+    <div class="gallery-asymmetric">
+      <div class="gallery-item gallery-item-1 corner-frame fade-in">
+        <img src="assets/gallery-1.jpg" alt="Ambiance feutrée du salon En Confidence à Toulouse" loading="lazy">
+      </div>
+      <div class="gallery-item gallery-item-2 fade-in">
+        <img src="assets/gallery-2.jpg" alt="Soin beauté et coiffure chez En Confidence à Toulouse" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOURS & LOCATION ══ -->
+<section id="horaires" aria-label="Horaires et adresse d'En Confidence - Maison de Beauté">
+  <div class="container">
+    <div class="hours-grid">
+      <div class="hours-info fade-in">
+        <span class="section-label">Nous trouver</span>
+        <h2 class="section-heading">Horaires &amp; adresse</h2>
+        <table class="hours-table" aria-label="Horaires d'ouverture">
+          <tbody>
+            <tr><td>Lundi</td><td>10:00 – 18:00</td></tr>
+            <tr><td>Mardi</td><td>09:00 – 19:00</td></tr>
+            <tr><td>Mercredi</td><td>09:00 – 19:00</td></tr>
+            <tr><td>Jeudi</td><td>10:00 – 21:00</td></tr>
+            <tr><td>Vendredi</td><td>09:00 – 19:00</td></tr>
+            <tr><td>Samedi</td><td>10:00 – 18:00</td></tr>
+            <tr class="closed"><td>Dimanche</td><td>Fermé</td></tr>
+          </tbody>
+        </table>
+        <div class="hours-contact">
+          <a href="tel:+33658230940" aria-label="Appeler En Confidence au +33 6 58 23 09 40">
+            📞 +33 6 58 23 09 40
+          </a>
+        </div>
+        <p class="hours-address">2 Rue Ninau, 31000 Toulouse, France</p>
+        <div class="mt-2">
+          <a href="#contact" class="cta" aria-label="Prendre rendez-vous">Prendre rendez-vous</a>
+        </div>
+      </div>
+      <div class="map-wrap fade-in">
+        <iframe
+          src="https://www.google.com/maps?q=2+Rue+Ninau,+31000+Toulouse,+France&output=embed"
+          title="Carte Google Maps - En Confidence Maison de Beauté, 2 Rue Ninau, 31000 Toulouse"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="Carte de localisation d'En Confidence - Maison de Beauté à Toulouse">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT FORM ══ -->
+<section id="contact" aria-label="Formulaire de contact et prise de rendez-vous">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info fade-in">
+        <span class="section-label">Nous écrire</span>
+        <h2 class="section-heading">Prendre rendez-vous</h2>
+        <p>Pour toute demande de rendez-vous ou d'information, contactez En Confidence - Maison de Beauté par téléphone ou via ce formulaire. Nous vous répondrons dans les plus brefs délais.</p>
+        <a href="tel:+33658230940" class="contact-phone-link" aria-label="Appeler En Confidence au +33 6 58 23 09 40">
+          📞 +33 6 58 23 09 40
+        </a>
+        <div class="mt-2">
+          <p style="color:rgba(247,241,232,0.6); font-size:0.88rem;">2 Rue Ninau, 31000 Toulouse, France</p>
+        </div>
+      </div>
+      <div class="contact-form-wrap fade-in">
+        <form action="https://checkout.kamkod.com/contact" method="POST" aria-label="Formulaire de prise de rendez-vous">
+          <input type="hidden" name="lead_id" value="ChIJsfm3BdG9rhIRp56-Rep2uGA">
+          <div class="form-group">
+            <label for="name">Votre nom</label>
+            <input type="text" id="name" name="name" placeholder="Prénom et nom" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Votre adresse e-mail</label>
+            <input type="email" id="email" name="email" placeholder="exemple@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" placeholder="Décrivez votre demande ou la prestation souhaitée." required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="cta" aria-label="Envoyer votre demande de rendez-vous">Prendre rendez-vous</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST SIGNALS ══ -->
+<section id="confiance" aria-label="Pourquoi choisir En Confidence - Maison de Beauté">
+  <div class="container">
+    <div class="trust-header fade-in">
+      <span class="section-label">Nos engagements</span>
+      <h2 class="section-heading">Pourquoi En Confidence</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item fade-in">
+        <div class="trust-icon">⭐</div>
+        <p>Note de 4,9/5 sur 65 avis</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">💎</div>
+        <p>Produits professionnels</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">👐</div>
+        <p>Équipe expérimentée</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">📅</div>
+        <p>Accueil sur rendez-vous</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">💳</div>
+        <p>Paiement CB accepté</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">🛋️</div>
+        <p>Espace détente</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">🧼</div>
+        <p>Hygiène stricte</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">🌿</div>
+        <p>Accueil attentionné et professionnel</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer aria-label="Pied de page En Confidence - Maison de Beauté">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-logo">En Confidence</p>
+        <p class="footer-tagline">Maison de Beauté · Toulouse</p>
+        <p>Salon de coiffure et institut de beauté au cœur de Toulouse. Une adresse intime et soignée pour prendre soin de vous.</p>
+        <div class="mt-1">
+          <a href="#contact" class="cta" style="margin-top:1.2rem; display:inline-block;" aria-label="Prendre rendez-vous">Prendre rendez-vous</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Horaires</h4>
+        <ul>
+          <li><span class="day">Lundi</span> 10:00 – 18:00</li>
+          <li><span class="day">Mardi</span> 09:00 – 19:00</li>
+          <li><span class="day">Mercredi</span> 09:00 – 19:00</li>
+          <li><span class="day">Jeudi</span> 10:00 – 21:00</li>
+          <li><span class="day">Vendredi</span> 09:00 – 19:00</li>
+          <li><span class="day">Samedi</span> 10:00 – 18:00</li>
+          <li><span class="day">Dimanche</span> Fermé</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          2 Rue Ninau<br>
+          31000 Toulouse, France<br><br>
+          <a href="tel:+33658230940" aria-label="Appeler En Confidence">+33 6 58 23 09 40</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 En Confidence - Maison de Beauté. Tous droits réservés.</span>
+      <span>2 Rue Ninau, 31000 Toulouse</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── BURGER MENU ──
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+
+  burger.addEventListener('click', function() {
+    const isOpen = navMenu.classList.toggle('open');
+    burger.classList.toggle('active', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    burger.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+
+  navMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('open');
+      burger.classList.remove('active');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Ouvrir le menu');
+    });
+  });
+
+  // ── NAV SCROLL ──
+  var mainNav = document.getElementById('main-nav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 40) {
+      mainNav.classList.add('scrolled');
+    } else {
+      mainNav.classList.remove('scrolled');
+    }
+  });
+
+  // ── FADE-IN INTERSECTION OBSERVER ──
+  var fadeEls = document.querySelectorAll('.fade-in');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  fadeEls.forEach(function(el) {
+    observer.observe(el);
+  });
+</script>
+<!-- KAMKOD:DEMO_START -->
+<script>
+(function(){
+  var URL = 'https://checkout.kamkod.com/?lead=ChIJsfm3BdG9rhIRp56-Rep2uGA';
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('a, button, [role="button"]');
+    if(!el || el.closest('form')) return;               /* formulaire -> endpoint contact */
+    if(el.classList.contains('cta')) { e.preventDefault(); window.location.href = URL; return; }
+    if(el.closest('header nav, nav')) return;           /* navigation interne de la démo */
+    var a = e.target.closest('a');
+    if(!a) return;                                      /* bouton seul hors nav: on laisse */
+    var href = a.getAttribute('href') || '';
+    if(href.charAt(0) === '#') return;                  /* ancres de section */
+    if(/^https?:|^\/\//i.test(href)) return;          /* lien externe réel */
+    e.preventDefault(); window.location.href = URL;     /* tel:, mailto:, javascript:… */
+  }, true);
+})();
+</script>
+<div id="kamkod-demo-banner" style="position:fixed;bottom:0;left:0;right:0;background:#000;color:#fff;padding:12px 16px;text-align:center;z-index:9999;font-family:system-ui,sans-serif;font-size:14px;">
+  Ceci est un aperçu de votre futur site — <a href="https://checkout.kamkod.com/?lead=ChIJsfm3BdG9rhIRp56-Rep2uGA" style="color:#FFD700;font-weight:600;">activez-le maintenant</a>
+</div>
+<!-- KAMKOD:DEMO_END -->
+</body>
+</html>
